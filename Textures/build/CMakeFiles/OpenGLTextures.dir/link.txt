@@ -1,0 +1,1 @@
+/usr/bin/g++ -g CMakeFiles/OpenGLTextures.dir/src/main.cpp.o CMakeFiles/OpenGLTextures.dir/src/glad.c.o CMakeFiles/OpenGLTextures.dir/src/Shader.cpp.o CMakeFiles/OpenGLTextures.dir/src/stb_image.cpp.o -o OpenGLTextures  -lglfw 

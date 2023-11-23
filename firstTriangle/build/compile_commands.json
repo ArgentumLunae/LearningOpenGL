@@ -1,0 +1,14 @@
+[
+{
+  "directory": "/home/argentumlunae/Documents/learnopengl/firstTriangle/build",
+  "command": "/usr/bin/g++   -g -o CMakeFiles/openglTutorial.dir/src/main.cpp.o -c /home/argentumlunae/Documents/learnopengl/firstTriangle/src/main.cpp",
+  "file": "/home/argentumlunae/Documents/learnopengl/firstTriangle/src/main.cpp",
+  "output": "CMakeFiles/openglTutorial.dir/src/main.cpp.o"
+},
+{
+  "directory": "/home/argentumlunae/Documents/learnopengl/firstTriangle/build",
+  "command": "/usr/bin/gcc   -g -o CMakeFiles/openglTutorial.dir/src/glad.c.o -c /home/argentumlunae/Documents/learnopengl/firstTriangle/src/glad.c",
+  "file": "/home/argentumlunae/Documents/learnopengl/firstTriangle/src/glad.c",
+  "output": "CMakeFiles/openglTutorial.dir/src/glad.c.o"
+}
+]

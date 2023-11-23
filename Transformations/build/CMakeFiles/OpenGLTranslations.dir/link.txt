@@ -1,0 +1,1 @@
+/usr/bin/g++ -g CMakeFiles/OpenGLTranslations.dir/src/main.cpp.o CMakeFiles/OpenGLTranslations.dir/src/glad.c.o CMakeFiles/OpenGLTranslations.dir/src/Shader.cpp.o CMakeFiles/OpenGLTranslations.dir/src/stb_image.cpp.o -o OpenGLTranslations  -lglfw 

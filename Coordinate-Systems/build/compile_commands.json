@@ -1,0 +1,26 @@
+[
+{
+  "directory": "/home/argentumlunae/Documents/learnopengl/Coordinate-Systems/build",
+  "command": "/usr/bin/g++   -g -o CMakeFiles/OpenGLTranslations.dir/src/main.cpp.o -c /home/argentumlunae/Documents/learnopengl/Coordinate-Systems/src/main.cpp",
+  "file": "/home/argentumlunae/Documents/learnopengl/Coordinate-Systems/src/main.cpp",
+  "output": "CMakeFiles/OpenGLTranslations.dir/src/main.cpp.o"
+},
+{
+  "directory": "/home/argentumlunae/Documents/learnopengl/Coordinate-Systems/build",
+  "command": "/usr/bin/gcc   -g -o CMakeFiles/OpenGLTranslations.dir/src/glad.c.o -c /home/argentumlunae/Documents/learnopengl/Coordinate-Systems/src/glad.c",
+  "file": "/home/argentumlunae/Documents/learnopengl/Coordinate-Systems/src/glad.c",
+  "output": "CMakeFiles/OpenGLTranslations.dir/src/glad.c.o"
+},
+{
+  "directory": "/home/argentumlunae/Documents/learnopengl/Coordinate-Systems/build",
+  "command": "/usr/bin/g++   -g -o CMakeFiles/OpenGLTranslations.dir/src/Shader.cpp.o -c /home/argentumlunae/Documents/learnopengl/Coordinate-Systems/src/Shader.cpp",
+  "file": "/home/argentumlunae/Documents/learnopengl/Coordinate-Systems/src/Shader.cpp",
+  "output": "CMakeFiles/OpenGLTranslations.dir/src/Shader.cpp.o"
+},
+{
+  "directory": "/home/argentumlunae/Documents/learnopengl/Coordinate-Systems/build",
+  "command": "/usr/bin/g++   -g -o CMakeFiles/OpenGLTranslations.dir/src/stb_image.cpp.o -c /home/argentumlunae/Documents/learnopengl/Coordinate-Systems/src/stb_image.cpp",
+  "file": "/home/argentumlunae/Documents/learnopengl/Coordinate-Systems/src/stb_image.cpp",
+  "output": "CMakeFiles/OpenGLTranslations.dir/src/stb_image.cpp.o"
+}
+]
