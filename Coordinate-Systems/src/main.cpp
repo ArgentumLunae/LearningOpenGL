@@ -15,12 +15,19 @@
 
 float	mixValue = 0.2;
 float	fov = 45.0f;
-glm::vec3	cameraPos = glm::vec3(1.0f, 1.0f, 0.3f);
-glm::vec3	cameraTarget = glm::vec3(0.0f, 0.0f, 0.0f);
-glm::vec3	cameraDirection = glm::normalize(cameraPos - cameraTarget);
-glm::vec3	up = glm::vec3(0.0f, 1.0f, 0.0f);
-glm::vec3	cameraRight = glm::normalize(glm::cross(up, cameraDirection));
 
+float	deltaTime = 0.0f;
+float	lastFrame = 0.0f;
+
+glm::vec3	cameraPos = glm::vec3(0.0f, 0.0f, 3.0f);
+glm::vec3	cameraFront = glm::vec3(0.0f, 0.0f, -1.0f);
+glm::vec3	cameraUp = glm::vec3(0.0f, 1.0f, 0.0f);
+float		yaw = -90.0f;
+float		pitch = 0.0f;
+
+bool		firstMouse = true;
+float	lastX = WIN_WIDTH / 2;
+float	lastY = WIN_HEIGHT / 2;
 
 GLFWwindow *setUpWindow(void)
 {
@@ -56,48 +63,85 @@ void framebufferSizeCallback(GLFWwindow *window, int width, int height)
 
 void processInput(GLFWwindow *window)
 {
+	const float cameraSpeed = 5.0f * deltaTime;
+
 	if (glfwGetKey(window, GLFW_KEY_ESCAPE) == GLFW_PRESS)
+	{
 		glfwSetWindowShouldClose(window, true);
-	else if (glfwGetKey(window, GLFW_KEY_W) == GLFW_PRESS)
-		glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
-	else if (glfwGetKey(window, GLFW_KEY_F) == GLFW_PRESS)
-		glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
-	else if (glfwGetKey(window, GLFW_KEY_UP) == GLFW_PRESS)
+		return ;
+	}
+	if (glfwGetKey(window, GLFW_KEY_TAB) == GLFW_PRESS)
+	{
+		GLint polyMode;
+
+		glGetIntegerv(GL_POLYGON_MODE, &polyMode);
+		if (polyMode == GL_FILL)
+			glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
+		else
+			glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
+	}
+	if (glfwGetKey(window, GLFW_KEY_W))
+		cameraPos += glm::vec3(cameraSpeed * cameraFront.x, 0.0, cameraSpeed * cameraFront.z); // for anf FPS like camera, remove translation along the y axis in forward and backward movement
+	if (glfwGetKey(window, GLFW_KEY_A))
+		cameraPos -= glm::normalize(glm::cross(cameraFront, cameraUp)) * cameraSpeed;
+	if (glfwGetKey(window, GLFW_KEY_S))
+		cameraPos -= glm::vec3(cameraSpeed * cameraFront.x, 0.0, cameraSpeed * cameraFront.z);
+	if (glfwGetKey(window, GLFW_KEY_D))
+		cameraPos += glm::normalize(glm::cross(cameraFront, cameraUp)) * cameraSpeed;
+	
+	if (glfwGetKey(window, GLFW_KEY_UP) == GLFW_PRESS)
 	{
 		mixValue += 0.01f;
 		if (mixValue >= 1.0f)
 			mixValue = 1.0f;
 	}
-	else if (glfwGetKey(window, GLFW_KEY_DOWN) == GLFW_PRESS)
+	if (glfwGetKey(window, GLFW_KEY_DOWN) == GLFW_PRESS)
 	{
 		mixValue -= 0.01f;
 		if (mixValue <= 0.0f)
 			mixValue = 0.0f;
 	}
-	else if (glfwGetKey(window, GLFW_KEY_PAGE_UP))
+}
+
+void mouse_callback(GLFWwindow *window, double xpos, double ypos)
+{
+	if (firstMouse)
 	{
-		fov += 1.0f;
-		if (fov >= 175.0f)
-			fov = 175.0f;
+		lastX = xpos;
+		lastY = ypos;
+		firstMouse = false;
 	}
-	else if (glfwGetKey(window, GLFW_KEY_PAGE_DOWN))
-	{
-		fov -= 1.0f;
-		if (fov <= 25.0f)
-			fov = 25.0f;
-	}
-	else if (glfwGetKey(window, GLFW_KEY_KP_1))
-		cameraPos.z -= 0.1f;
-	else if (glfwGetKey(window, GLFW_KEY_KP_2))
-		cameraPos.y += 0.1f;
-	else if (glfwGetKey(window, GLFW_KEY_KP_4))
-		cameraPos.x += 0.1f;
-	else if (glfwGetKey(window, GLFW_KEY_KP_6))
-		cameraPos.x -= 0.1f;
-	else if (glfwGetKey(window, GLFW_KEY_KP_8))
-		cameraPos.y -= 0.1f;
-	else if (glfwGetKey(window, GLFW_KEY_KP_9))
-		cameraPos.z += 0.1f;
+
+	float	xoffset = xpos - lastX;
+	float	yoffset = ypos - lastY;
+	lastX = xpos;
+	lastY = ypos;
+
+	const float	sensistivity = 0.01f;
+	xoffset *= sensistivity;
+	yoffset *= sensistivity;
+
+	yaw	+= xoffset;
+	pitch -= yoffset;
+	if (pitch > 89.0f)
+		pitch = 89.0f;
+	if (pitch < -89.0f)
+		pitch = -89.0f;
+
+	glm::vec3	direction;
+	direction.x = cos(glm::radians(yaw)) * cos(glm::radians(pitch));
+	direction.y = sin(glm::radians(pitch));
+	direction.z = sin(glm::radians(yaw)) * cos(glm::radians(pitch));
+	cameraFront = glm::normalize(direction);
+}
+
+void scroll_callback(GLFWwindow* window, double xoffset, double yoffset)
+{
+	fov -= (float)yoffset;
+	if (fov < 1.0f)
+		fov = 1.0f;
+	if (fov > 45.0f)
+		fov = 45.0f;
 }
 
 int main(int, char**)
@@ -117,6 +161,9 @@ int main(int, char**)
 		return -1;
 	
 	glfwSetFramebufferSizeCallback(window, framebufferSizeCallback);
+	glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_DISABLED);
+	glfwSetCursorPosCallback(window, mouse_callback);
+	glfwSetScrollCallback(window, scroll_callback);
 
 	// Setup Triangle
 	Shader 		myShader("../shaders/vertex/3Dbasics.vs", "../shaders/fragment/basic.fs");	// formerly "unsigned int shaderProgram;"
@@ -263,6 +310,9 @@ int main(int, char**)
 
 	while (!glfwWindowShouldClose(window))
 	{
+		float currentFrame = glfwGetTime();
+		deltaTime = currentFrame - lastFrame;
+		lastFrame = currentFrame;
 		processInput(window);
 
 		glClearColor(0.25, 0.15, 0.75, 1.0);
@@ -281,10 +331,9 @@ int main(int, char**)
 		glBindVertexArray(VAO);
 
 		glm::mat4 projection = glm::mat4(1.0f);
-		glm::mat4 view = glm::mat4(1.0f);
+		glm::mat4 view = glm::lookAt(cameraPos, cameraPos + cameraFront, cameraUp);
 
 		projection = glm::perspective(glm::radians(fov), 800.0f / 600.0f, 0.1f, 100.0f);
-		view = glm::translate(view, cameraPos);
 
 		glUniformMatrix4fv(projectionLoc, 1, GL_FALSE, glm::value_ptr(projection));
 		glUniformMatrix4fv(viewLoc, 1, GL_FALSE, glm::value_ptr(view));
