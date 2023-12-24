@@ -1,0 +1,1 @@
+/usr/bin/g++ -g CMakeFiles/openglShaders.dir/src/main.cpp.o CMakeFiles/openglShaders.dir/src/glad.c.o -o openglShaders  -lglfw -lOpenGL::GL 

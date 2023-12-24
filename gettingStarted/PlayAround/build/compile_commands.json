@@ -1,0 +1,62 @@
+[
+{
+  "directory": "/home/argentumlunae/Documents/learnopengl/gettingStarted/PlayAround/build",
+  "command": "/usr/bin/g++   -g -o CMakeFiles/OpenGLTranslations.dir/src/main.cpp.o -c /home/argentumlunae/Documents/learnopengl/gettingStarted/PlayAround/src/main.cpp",
+  "file": "/home/argentumlunae/Documents/learnopengl/gettingStarted/PlayAround/src/main.cpp",
+  "output": "CMakeFiles/OpenGLTranslations.dir/src/main.cpp.o"
+},
+{
+  "directory": "/home/argentumlunae/Documents/learnopengl/gettingStarted/PlayAround/build",
+  "command": "/usr/bin/gcc   -g -o CMakeFiles/OpenGLTranslations.dir/src/glad.c.o -c /home/argentumlunae/Documents/learnopengl/gettingStarted/PlayAround/src/glad.c",
+  "file": "/home/argentumlunae/Documents/learnopengl/gettingStarted/PlayAround/src/glad.c",
+  "output": "CMakeFiles/OpenGLTranslations.dir/src/glad.c.o"
+},
+{
+  "directory": "/home/argentumlunae/Documents/learnopengl/gettingStarted/PlayAround/build",
+  "command": "/usr/bin/g++   -g -o CMakeFiles/OpenGLTranslations.dir/src/Shader.cpp.o -c /home/argentumlunae/Documents/learnopengl/gettingStarted/PlayAround/src/Shader.cpp",
+  "file": "/home/argentumlunae/Documents/learnopengl/gettingStarted/PlayAround/src/Shader.cpp",
+  "output": "CMakeFiles/OpenGLTranslations.dir/src/Shader.cpp.o"
+},
+{
+  "directory": "/home/argentumlunae/Documents/learnopengl/gettingStarted/PlayAround/build",
+  "command": "/usr/bin/g++   -g -o CMakeFiles/OpenGLTranslations.dir/src/Shader2.cpp.o -c /home/argentumlunae/Documents/learnopengl/gettingStarted/PlayAround/src/Shader2.cpp",
+  "file": "/home/argentumlunae/Documents/learnopengl/gettingStarted/PlayAround/src/Shader2.cpp",
+  "output": "CMakeFiles/OpenGLTranslations.dir/src/Shader2.cpp.o"
+},
+{
+  "directory": "/home/argentumlunae/Documents/learnopengl/gettingStarted/PlayAround/build",
+  "command": "/usr/bin/g++   -g -o CMakeFiles/OpenGLTranslations.dir/src/stb_image.cpp.o -c /home/argentumlunae/Documents/learnopengl/gettingStarted/PlayAround/src/stb_image.cpp",
+  "file": "/home/argentumlunae/Documents/learnopengl/gettingStarted/PlayAround/src/stb_image.cpp",
+  "output": "CMakeFiles/OpenGLTranslations.dir/src/stb_image.cpp.o"
+},
+{
+  "directory": "/home/argentumlunae/Documents/learnopengl/gettingStarted/PlayAround/build",
+  "command": "/usr/bin/g++   -g -o CMakeFiles/OpenGLTranslations.dir/src/Cameras/Camera.cpp.o -c /home/argentumlunae/Documents/learnopengl/gettingStarted/PlayAround/src/Cameras/Camera.cpp",
+  "file": "/home/argentumlunae/Documents/learnopengl/gettingStarted/PlayAround/src/Cameras/Camera.cpp",
+  "output": "CMakeFiles/OpenGLTranslations.dir/src/Cameras/Camera.cpp.o"
+},
+{
+  "directory": "/home/argentumlunae/Documents/learnopengl/gettingStarted/PlayAround/build",
+  "command": "/usr/bin/g++   -g -o CMakeFiles/OpenGLTranslations.dir/src/Cameras/FreeFlightCam.cpp.o -c /home/argentumlunae/Documents/learnopengl/gettingStarted/PlayAround/src/Cameras/FreeFlightCam.cpp",
+  "file": "/home/argentumlunae/Documents/learnopengl/gettingStarted/PlayAround/src/Cameras/FreeFlightCam.cpp",
+  "output": "CMakeFiles/OpenGLTranslations.dir/src/Cameras/FreeFlightCam.cpp.o"
+},
+{
+  "directory": "/home/argentumlunae/Documents/learnopengl/gettingStarted/PlayAround/build",
+  "command": "/usr/bin/g++   -g -o CMakeFiles/OpenGLTranslations.dir/src/Cameras/FpsCamera.cpp.o -c /home/argentumlunae/Documents/learnopengl/gettingStarted/PlayAround/src/Cameras/FpsCamera.cpp",
+  "file": "/home/argentumlunae/Documents/learnopengl/gettingStarted/PlayAround/src/Cameras/FpsCamera.cpp",
+  "output": "CMakeFiles/OpenGLTranslations.dir/src/Cameras/FpsCamera.cpp.o"
+},
+{
+  "directory": "/home/argentumlunae/Documents/learnopengl/gettingStarted/PlayAround/build",
+  "command": "/usr/bin/g++   -g -o CMakeFiles/OpenGLTranslations.dir/src/setupArrays.cpp.o -c /home/argentumlunae/Documents/learnopengl/gettingStarted/PlayAround/src/setupArrays.cpp",
+  "file": "/home/argentumlunae/Documents/learnopengl/gettingStarted/PlayAround/src/setupArrays.cpp",
+  "output": "CMakeFiles/OpenGLTranslations.dir/src/setupArrays.cpp.o"
+},
+{
+  "directory": "/home/argentumlunae/Documents/learnopengl/gettingStarted/PlayAround/build",
+  "command": "/usr/bin/g++   -g -o CMakeFiles/OpenGLTranslations.dir/src/Cube.cpp.o -c /home/argentumlunae/Documents/learnopengl/gettingStarted/PlayAround/src/Cube.cpp",
+  "file": "/home/argentumlunae/Documents/learnopengl/gettingStarted/PlayAround/src/Cube.cpp",
+  "output": "CMakeFiles/OpenGLTranslations.dir/src/Cube.cpp.o"
+}
+]
